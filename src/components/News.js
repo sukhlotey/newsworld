@@ -3,7 +3,7 @@ import Newsitem from './Newsitem'
 import Spinner from './Spinner'
 import InfiniteScroll from "react-infinite-scroll-component";
 import PropTypes from 'prop-types'
-
+import Masonry from 'react-masonry-css'
 
 const News= (props)=> {
 const [articles, setArticles] = useState([]) 
@@ -16,13 +16,17 @@ const capitalize = (string) => {
   }
 
  const updateNews= async ()=> {
+  props.setProgress(10);
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=81e708a43df24760ae0927d1921ec37e&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true)
     let data = await fetch(url);
+    props.setProgress(30);
     let parsedData = await data.json();
+    props.setProgress(70);
     setArticles(parsedData.articles);
     setLoading(false);
     setTotalResults(parsedData.totalResults)
+    props.setProgress(100);
   }
 
   useEffect(() => {
@@ -42,6 +46,15 @@ const capitalize = (string) => {
     setTotalResults(parsedData.totalResults)
   };
 
+  const breakpoints={
+    default: 4,
+    1200: 4,
+    1050:3,
+    974:2,
+    768:2,
+    576:1,
+    340:1
+  }
 
     return (
 
@@ -58,13 +71,16 @@ const capitalize = (string) => {
         >
           <div className="container">
 
-          <div className="row">
+         <Masonry
+         breakpointCols={breakpoints}
+         className="my-masonry-grid"
+         columnClassName="my-masonry-grid_column">
             {articles.map((element) => {
-              return <div className="col-sm-12 col-md-4 col-lg-3 col-xl-3" key={element.url}>
+              return <div key={element.url}>
                 <Newsitem title={element.title? element.title: ""} description={element.description ? element.description.slice(0, 90) : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} />
               </div>
             })}
-          </div>
+        </Masonry>
           </div>
         </InfiniteScroll>
  

@@ -6,7 +6,7 @@ import Logo from './Logo'
  const Navbar = () =>{
     return (
       <div>
-        <nav className="navbar fixed-top navbar-expand-lg bg-dark navbar-dark border-bottom">
+        <nav className="navbar fixed-top navbar-expand-lg navbar-dark border-bottom-0"style={{backgroundColor:"#0c1626"}}>
   <div className="container-fluid">
     <div className="navbar-brand"><Logo/>News Man</div>
     <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

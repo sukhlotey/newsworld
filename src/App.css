@@ -17,6 +17,9 @@ transition:all .4s ease;
 .colorr{
     color: #b00a0a;
 }
+.shadow:hover{
+  box-shadow: 2px 2px 5px #fff;
+}
 .my-masonry-grid {
     display: -webkit-box; /* Not needed if autoprefixing */
     display: -ms-flexbox; /* Not needed if autoprefixing */

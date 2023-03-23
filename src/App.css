@@ -1,5 +1,5 @@
 body{
-    background-color: #05005a;
+    background-color: #040d50;
 }
 
 .innerS:hover{
@@ -21,10 +21,13 @@ transition:all .4s ease;
   box-shadow: 2px 2px 5px #fff;
 }
 li a.active{
-text-decoration: underline;
+/* text-decoration: underline; */
 font-weight: 900;
 }
 
+.category-color{
+  color: #696565;
+}
 .my-masonry-grid {
     display: -webkit-box; /* Not needed if autoprefixing */
     display: -ms-flexbox; /* Not needed if autoprefixing */

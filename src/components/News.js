@@ -60,7 +60,7 @@ const capitalize = (string) => {
 
      <>
 
-        <h1 className="text-center text-light" style={{marginTop: "80px"}}>News Daily - Top {capitalize(props.category)} Headlines</h1>
+        <h1 className="text-center text-light" style={{marginTop: "80px"}}>News Daily - Top <span className='category-color'>{capitalize(props.category)}</span> Headlines</h1>
         {loading && <Spinner/>}
 
         <InfiniteScroll

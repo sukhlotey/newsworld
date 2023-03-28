@@ -7,7 +7,7 @@ export default function Connect() {
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalToggleLabel">Connect us <i className="fa-solid fa-link" style={{ fontSize: "15px"}}></i></h5>
+                            <h5 className="modal-title text-dark" id="exampleModalToggleLabel">Connect us <i className="fa-solid fa-link" style={{ fontSize: "15px"}}></i></h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body" style={{ backgroundColor: "#0c1626" }}>
@@ -60,7 +60,7 @@ export default function Connect() {
                                             role="button"><i className="fab fa-github"></i></a>
                                     </section>
                                 </div>
-                                <div className="text-center text-light p-3" style={{ backgroundColor: "#0f213b" }}> NEWS MAN </div>
+                                <div className="text-center text-light p-3" style={{ backgroundColor: "#0f213b" }}> NEWS DAILY </div>
                             </footer>
                         </div>
                     </div>

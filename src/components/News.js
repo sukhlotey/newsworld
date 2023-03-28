@@ -30,7 +30,7 @@ const capitalize = (string) => {
   }
 
   useEffect(() => {
-    document.title = `${capitalize(props.category)} - News Man`;
+    document.title = `${capitalize(props.category)} - News Daily`;
     updateNews();
 // eslint-disable-next-line 
   }, [])
@@ -60,7 +60,7 @@ const capitalize = (string) => {
 
      <>
 
-        <h1 className="text-center text-light" style={{marginTop: "80px"}}>News Daily - Top <span className='category-color'>{capitalize(props.category)}</span> Headlines</h1>
+        <h1 className="text-center " style={{marginTop: "80px"}}>News Daily - Top <span className='category-color'>{capitalize(props.category)}</span> Headlines</h1>
         {loading && <Spinner/>}
 
         <InfiniteScroll

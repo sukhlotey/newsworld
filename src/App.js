@@ -4,6 +4,9 @@ import Navbar from './components/Navbar'
 import Connect from './components/Connect'
 import News from './components/News'
 import LoadingBar from "react-top-loading-bar";
+import JoinUs from './components/JoinUs';
+
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -20,6 +23,7 @@ const [progress, setProgress] = useState(0);
         <Router>
      <Navbar/>  
      <Connect/>
+     <JoinUs/>
      <LoadingBar color="#005abb" height={3} progress={progress} />
      <Routes>
      <Route exact path="/" element={<News setProgress={setProgress} key="/" pageSize={pageSize} country="in" category="general"/>}/>
@@ -32,6 +36,7 @@ const [progress, setProgress] = useState(0);
      <Route exact path="/technology" element={<News setProgress={setProgress} key="technology" pageSize={pageSize} country="in" category="technology"/>}/>
      </Routes>
       </Router>
+      
       </div>
     )
   }

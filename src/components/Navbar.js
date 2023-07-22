@@ -1,129 +1,117 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "./Logo";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 const Navbar = () => {
-  const [theme, setTheme] = useState(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const navbarRef = useRef(null);
 
-  const handler = () => {
-    setTheme(!theme);
-  };
-  useEffect(() => {
-    if (theme === true) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
+  const handleOutsideClick = (event) => {
+    if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+      setIsNavbarOpen(false);
     }
-  });
+  };
 
-  // note
-  const hand = () => {
-    const text =
-      "Welcome to news daily application here you can read latest news of every kind of category and here you can connect with us by click conntect us option and you can join with us by signin google.";
-    const value = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(value);
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
+  const handleNavLinkClick = () => {
+    setIsNavbarOpen(false); // Close the navbar when clicking on a navbar button
   };
 
   return (
-    <div>
+    <div ref={navbarRef}>
       <nav
-        className="navbar fixed-top navbar-expand-lg navbar-dark border-bottom-0 "
-        style={{ backgroundColor: "rgb(0 8 20)" }}
+        className={`navbar fixed-top navbar-expand-lg navbar-dark border-bottom-0 ${
+          isNavbarOpen ? "show" : ""
+        }`}
+        style={{ backgroundColor: "#2e2929ed" }}
       >
         <div className="container-fluid">
-          <div className="navbar-brand">
-            <Logo />
-            News Daily
-          </div>
+          <div className="navbar-brand">News World</div>
           <button
             className="navbar-toggler border-0"
             type="button"
+            onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+            aria-expanded={isNavbarOpen}
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-            aria-expanded="false"
+            // aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className={`collapse navbar-collapse ${isNavbarOpen ? "show" : ""}`}
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/general">
+                <NavLink
+                  className="nav-link"
+                  to="/general"
+                  onClick={handleNavLinkClick}
+                >
                   General
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/business">
+                <NavLink
+                  className="nav-link"
+                  to="/business"
+                  onClick={handleNavLinkClick}
+                >
                   Business
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/entertainment">
+                <NavLink
+                  className="nav-link"
+                  to="/entertainment"
+                  onClick={handleNavLinkClick}
+                >
                   Entertainment
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/health">
+                <NavLink
+                  className="nav-link"
+                  to="/health"
+                  onClick={handleNavLinkClick}
+                >
                   Health
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/science">
+                <NavLink
+                  className="nav-link"
+                  to="/science"
+                  onClick={handleNavLinkClick}
+                >
                   Science
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/sports">
+                <NavLink
+                  className="nav-link"
+                  to="/sports"
+                  onClick={handleNavLinkClick}
+                >
                   Sports
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/technology">
+                <NavLink
+                  className="nav-link"
+                  to="/technology"
+                  onClick={handleNavLinkClick}
+                >
                   Technology
                 </NavLink>
-              </li>
-              <li className="nav-item border-line">
-                <NavLink
-                  className="nav-link"
-                  data-bs-toggle="modal"
-                  to="#exampleModalToggle"
-                  style={{ color: "#ff0000", textDecoration: "none" }}
-                >
-                  Connect Us
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link"
-                  data-bs-toggle="modal"
-                  to="#exampleModal"
-                >
-                  Join Us
-                </NavLink>
-              </li>
-              <li className="nav-item">
-          
-                <div className="btn" onClick={handler}>
-                  {theme ? (
-                    <img
-                      style={{ height: "30px", width: "30px" }}
-                      src="../light.png"
-                      alt="light"
-                    />
-                  ) : (
-                    <img
-                      style={{ height: "30px", width: "30px" }}
-                      src="../dark.png"
-                      alt="dark"
-                    />
-                  )}
-                </div>
-              </li>
-              <li className="nav-item">
-                <button className="btn-note" onClick={hand}>
-                <img src="../note.png" alt="voice"/>
-                </button>
               </li>
             </ul>
           </div>

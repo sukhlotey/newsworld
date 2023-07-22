@@ -1,38 +1,47 @@
-body{
-    background-color: #b2b3ba;
+body {
+  background-color: #000000cf;
 }
-.innerS:hover{
-    overflow: hidden;
+.container-fluid {
+  width: 93%;
+  padding-right: (1.5rem, 0.75rem);
+  padding-left: (1.5rem, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
 }
-.scale:hover{ 
-transform: scale(1.3);
-transition:all .4s ease;
+.innerS:hover {
+  overflow: hidden;
+}
+.scale:hover {
+  transform: scale(1.3);
+  transition: all 0.4s ease;
 }
 
-.card-body{
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+.card-body {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
-.colorr{
-    color: #ff0000;
+.colorr {
+  color: #f4efef;
+  font-weight: bold;
 }
-.shadow:hover{
+.shadow:hover {
   box-shadow: 2px 2px 5px #fff;
 }
-li a.active{
-/* text-decoration: underline; */
-font-weight: 900;
+li a.active {
+  /* text-decoration: underline; */
+  font-weight: 900;
 }
 
-.category-color{
-  color: #696565;
+.category-color {
+  color: #ffffff;
+  font-weight: 900;
 }
 
-.border-line{
+.border-line {
   border-left: 1px solid #fff;
 }
 
-.btnOut{
+.btnOut {
   background-color: #fff;
   font-weight: 900;
   border: 0;
@@ -40,66 +49,61 @@ font-weight: 900;
   color: #000;
   margin-top: 5px;
 }
-.btn-note{
-  border: 0;
-  background: 0;
+.text-center {
+  color: #ffffff;
 }
-.btn-note img{
-  width: 40px;
-  height: 40px;
-}
-.dark{
-  background-color: #040d50;
-  color: #fff;
-  transition: .4s ease-in-out;
+.navbar-brand {
+  font-weight: 900;
 }
 
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 .my-masonry-grid {
-    display: -webkit-box; /* Not needed if autoprefixing */
-    display: -ms-flexbox; /* Not needed if autoprefixing */
-    display: flex;
-    margin-left: -30px; /* gutter size offset */
-    width: auto;
-  }
-  .my-masonry-grid_column {
-    padding-left: 30px; /* gutter size */
-    background-clip: padding-box;
-  }
-  
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
 
-  @media only screen and (max-width: 1000px) and (min-width: 200px)  
-  {
-    .border-line{
-      border-left: 0;
-    }
+@media only screen and (max-width: 1000px) and (min-width: 200px) {
+  .border-line {
+    border-left: 0;
   }
+}
 
-  .email-h3{
-    font-weight: 100;
-    font-size: small;
-  }
-  ::-webkit-scrollbar {
-    width: 4px;
-    border: 1px solid #d5d5d5;
-  }
-  
-  ::-webkit-scrollbar-track {
-    border-radius: 0;
-    background: #eeeeee;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    border-radius:0;
-    background: #19268c;
-  }
-  /* Style your items */
-  .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-    margin-bottom: 30px;
-  }
+.email-h3 {
+  font-weight: 100;
+  font-size: small;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  border: 1px solid #d5d5d5;
+}
 
-  @media only screen and (max-width: 1000px) and (min-width: 200px)  
-  {
-    .border-line{
-      border-left: 0;
-    }
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #000000;
+}
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 200px) {
+  .border-line {
+    border-left: 0;
   }
+}

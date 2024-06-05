@@ -1,2 +1,1 @@
-![Screenshot from 2023-07-23 05-28-22](https://github.com/sukhlotey/newsdaily/assets/82471879/adcba933-f6e2-4c2a-834e-618e6443dd4e)
-
+![Screenshot from 2024-06-05 15-31-13](https://github.com/sukhlotey/newsworld/assets/82471879/f80ce839-32e2-4ccd-a2bb-6a5be1d7151c)

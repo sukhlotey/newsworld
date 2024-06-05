@@ -22,12 +22,14 @@ const Newsitem = (props) => {
         >
           <h5 className="card-title text-light">{title}</h5>
           <p className="card-text text-light">{description}...</p>
-          <p className="card-text">
-            <small className="text-light">
-              By <b className="colorr">{!author ? "Unknown" : author}</b> on{" "}
-              {moment(date).format("MMMM Do YYYY, h:mm a")}
-            </small>
-          </p>
+          <div className="hover-info">
+            <p className="card-text">
+              <small className="text-light">
+                By <b className="colorr">{!author ? "Unknown" : author}</b> on{" "}
+                {moment(date).format("MMMM Do YYYY, h:mm a")}
+              </small>
+            </p>
+          </div>
           <a
             rel="noreferrer"
             href={newsUrl}

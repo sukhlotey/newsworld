@@ -16,24 +16,45 @@ body {
   transition: all 0.4s ease;
 }
 
-.card-body {
+/* .card-body {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-}
+} */
 .colorr {
   color: #f4efef;
   font-weight: bold;
 }
+.hover-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.57);
+  padding: 10px;
+  overflow: hidden;
+}
+.card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.card:hover .hover-info {
+  visibility: visible; 
+  opacity: 1;
+  overflow: hidden;
+}
+
 .shadow:hover {
   box-shadow: 2px 2px 5px #fff;
 }
 li a.active {
-  /* text-decoration: underline; */
   font-weight: 900;
 }
 
 .category-color {
-  color: #ffffff;
+  color: #ffffffc9;
   font-weight: 900;
 }
 
@@ -96,9 +117,8 @@ li a.active {
   border-radius: 0;
   background: #000000;
 }
-/* Style your items */
+
 .my-masonry-grid_column > div {
-  /* change div to reference your elements you put in <Masonry> */
   margin-bottom: 30px;
 }
 

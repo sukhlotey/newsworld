@@ -5,6 +5,7 @@ import News from "./components/News";
 import LoadingBar from "react-top-loading-bar";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 const App = () => {
   const pageSize = 8;
 
@@ -12,9 +13,9 @@ const App = () => {
 
   return (
     <div>
+
       <Router>
         <Navbar />
-
         <LoadingBar color="#ffffff" height={3} progress={progress} />
         <Routes>
           <Route
@@ -122,7 +123,9 @@ const App = () => {
             }
           />
         </Routes>
+     
       </Router>
+
     </div>
   );
 };

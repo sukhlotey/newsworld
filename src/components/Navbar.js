@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+
+
 const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const navbarRef = useRef(null);
@@ -116,6 +118,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
+        
       </nav>
     </div>
   );

@@ -61,7 +61,7 @@ const News = (props) => {
 
   return (
     <>
-      <h1 className="text-center " style={{ marginTop: "80px" }}>
+      <h1 className="text-center " style={{ marginTop: "80px",color:"#ffffffc9" }}>
         News World - Top{" "}
         <span className="category-color">{capitalize(props.category)}</span>{" "}
         Headlines
